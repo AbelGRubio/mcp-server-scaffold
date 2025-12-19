@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+roles.json
+
+docker/.env
+.env.logto 
+.env.keycloak
+.env.cognito
+
+clientes_LLM_cognito.json
+ipynb/.env
+my_tools/
+src/my_tools/
+
+# Virtual environments
+.venv

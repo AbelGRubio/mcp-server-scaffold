@@ -1,0 +1,19 @@
+default:
+  image: python:3.14
+
+variables:
+  PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache/pip
+  PYTHONPATH: "src"
+
+stages:
+  - test
+  - semantic-release
+
+
+include:
+  - project: 'templates/ci-templates'
+    file: '/pre-commit.yml'
+  - project: 'templates/ci-templates'
+    file: '/test.yml'
+  - project: 'templates/ci-templates'
+    file: '/semantic-release.uv.yml'

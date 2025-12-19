@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "tasks": [
+    {
+      "label": "Run",
+      "type": "shell",
+      "command": "python src",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

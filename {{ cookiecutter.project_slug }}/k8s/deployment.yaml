@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    redeploy-at: "2025-10-29T12:02:00Z"
+  name: {{ cookiecutter.project_slug }}
+  namespace: {{ cookiecutter.k8s_namespace }}
+  labels:
+    app: {{ cookiecutter.project_slug }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ cookiecutter.project_slug }}
+  template:
+    metadata:
+      labels:
+        app: {{ cookiecutter.project_slug }}
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname:  {{ cookiecutter.k8s_hostname }}
+      containers:
+      - name: {{ cookiecutter.project_slug }}
+        image: {{ cookiecutter.k8s_registry }}:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - secretRef:
+            name: {{ cookiecutter.project_slug }}-secrets
