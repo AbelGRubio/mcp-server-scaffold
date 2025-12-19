@@ -10,6 +10,10 @@ on:
       PR_TOKEN_USER:
         required: false
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
