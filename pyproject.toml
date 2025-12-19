@@ -146,7 +146,7 @@ upload_to_repository = true
 tag_commit = "true"
 changelog_file="CHANGELOG.md"
 build_command = "uv build"
-version_variables = ["src/mcp_server_scaffold/__init__.py:__version__", "pyproject.toml:version"]
+version_variables = ["pyproject.toml:version"]
 
 
 [tool.flake8]
