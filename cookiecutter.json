@@ -1,6 +1,7 @@
 {
     "application": "Application name",
     "project_slug": "project_name",
+    "folder_name": "{{ cookiecutter.project_slug.replace('_', '-') }}",
     "component_description": "Component description",
     "project_author_name": "autor 1",
     "email": "{something@email}",
