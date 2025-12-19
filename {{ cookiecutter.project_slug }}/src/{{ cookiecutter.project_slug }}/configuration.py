@@ -1,7 +1,7 @@
 import configparser
 import os
 
-__version__ = {{ cookiecutter.version }}
+__version__ = "{{ cookiecutter.version }}"
 
 
 conf_file = os.getenv("CONF_FILE", "./conf/config.cfg")

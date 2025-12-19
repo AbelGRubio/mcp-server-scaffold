@@ -10,15 +10,14 @@ if use_k8s.lower() != "yes":
 
 use_git = "{{ cookiecutter.use_git }}"
 
-# Paths
-gitlab_ci = Path(".gitlab-ci.yml")
-github_actions = Path(".github")
 
 if use_git == "gitlab":
+    github_actions = Path(".github")
     # Keep GitLab CI, remove GitHub Actions
     if github_actions.exists():
         shutil.rmtree(github_actions)
 else:
+    gitlab_ci = Path(".gitlab-ci.yml")
     # Keep GitHub Actions, remove GitLab CI
     if gitlab_ci.exists():
         gitlab_ci.unlink()
