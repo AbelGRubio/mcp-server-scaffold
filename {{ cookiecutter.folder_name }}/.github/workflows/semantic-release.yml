@@ -1,4 +1,4 @@
-{% raw %}name: Pre-commit
+{% raw %}name: Semantic Release
 
 on:
   workflow_call:
@@ -7,10 +7,12 @@ on:
         required: false
 
 jobs:
-  pre-commit:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # 1️⃣ Set PR token env
       - name: Set PR token env
@@ -18,31 +20,33 @@ jobs:
           PR_TOKEN_USER: ${{ secrets.PR_TOKEN_USER }}
         run: echo "PR_TOKEN_USER=${PR_TOKEN_USER}" >> $GITHUB_ENV
 
-      # 2️⃣ Skip if triggered by bot user
-      - name: Skip if bot user
-        if: github.actor != env.PR_TOKEN_USER
-        run: echo "Running pre-commit"
+      # 2️⃣ Skip bot user and default branch check
+      - name: Skip if not default branch or bot user
+        if: github.actor != env.PR_TOKEN_USER && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        run: echo "Running semantic release"
 
-      # 3️⃣ Skip if commit message is a version (x.y.z)
-      - name: Block version commits
+      # 3️⃣ Skip version TAGS (x.y.z)
+      - name: Block version tags
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
-          if [[ "${{ github.event.head_commit.message }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then
-            echo "Version commit detected. Skipping pre-commit."
+          if [[ "${GITHUB_REF_NAME}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Version tag detected. Skipping semantic release."
             exit 1
           fi
 
-      # 4️⃣ Skip merge request / pull request events
+      # 4️⃣ Skip version COMMITS (x.y.z)
+      - name: Block version commits
+        run: |
+          if [[ "${{ github.event.head_commit.message }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+            echo "Version commit detected. Skipping semantic release."
+            exit 1
+          fi
+
+      # 5️⃣ Skip pull request events
       - name: Block pull request events
         if: github.event_name == 'pull_request'
         run: |
-          echo "Pull request event detected. Skipping pre-commit."
-          exit 1
-
-      # 5️⃣ Skip tag builds
-      - name: Block tag builds
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "Tag build detected. Skipping pre-commit."
+          echo "Pull request event detected. Skipping semantic release."
           exit 1
 
       - uses: actions/setup-python@v5
@@ -55,7 +59,9 @@ jobs:
       - name: Sync dependencies
         run: uv sync
 
-      # 6️⃣ Run pre-commit
-      - name: Run pre-commit
-        run: uv run pre-commit run --all-files
+      # 6️⃣ Semantic release
+      - name: Semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run semantic-release publish
 {% endraw %}
