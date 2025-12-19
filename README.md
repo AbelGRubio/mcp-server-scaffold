@@ -26,13 +26,13 @@ A scaffold project for building **MCP (Model Context Protocol) servers** with a 
 
 ## 📁 Project Structure
 
-```text 
-src/ 
-├── server/        # MCP server implementation 
-├── tools/         # MCP tools definitions 
-├── resources/     # MCP resources 
-└── config/        # Configuration and settings 
-tests/             # Unit and integration test 
+```text
+src/
+├── server/        # MCP server implementation
+├── tools/         # MCP tools definitions
+├── resources/     # MCP resources
+└── config/        # Configuration and settings
+tests/             # Unit and integration test
 ```
 
 

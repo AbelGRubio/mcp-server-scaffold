@@ -14,4 +14,3 @@ CORS_ORIGINS = [c_ for c_ in cors_ if c_ != ""]
 
 API_IP = os.getenv("API_IP", "localhost")
 API_PORT = int(os.getenv("API_PORT", 5005))
-

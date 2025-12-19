@@ -8,7 +8,7 @@ wheels/
 roles.json
 
 docker/.env
-.env.logto 
+.env.logto
 .env.keycloak
 .env.cognito
 

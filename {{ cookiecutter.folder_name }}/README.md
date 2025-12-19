@@ -144,4 +144,3 @@ Uses `deptry` to detect dependencies in `src/` that are not used.
   - Source code → `src/`
   - Documentation → `docs/source/` → `docs/build/html/`
   - Distribution → `dist/`
-

@@ -1,30 +1,36 @@
 {
-    "application": "Application name",
-    "project_slug": "project_name",
-    "folder_name": "{{ cookiecutter.project_slug.replace('_', '-') }}",
-    "component_description": "Component description",
-    "project_author_name": "autor 1",
-    "email": "{something@email}",
-    "version": "0.1.0",
-    "_scaffold_version": "0.0.1",
-    "python_version": "3.14",
-    "use_k8s": ["yes", "no"],
-    "k8s_namespace": "default",
-    "k8s_url": "example.com",
-    "k8s_hostname": "server",
-    "k8s_registry": "url_registry",
-    "use_git": ["github", "gitlab"],
-    "__prompts__": {
-        "application": "Type the name of the application",
-        "project_slug": "Type the component name for the project must be alphanumeric with an underscore as a separator, max size 50, following this pattern: ^['a-zA-Z0-9']+(?:[_]['a-zA-Z0-9']+)?$ .",
-        "component_description": "Type a description for the project",
-        "project_author_name": "User or team name",
-        "email": "Type the author's email address",
-        "version": "Type the version of the project",
-        "use_k8s": "Do you want to deploy in k8s?",
-        "k8s_namespace": "Namespace for deploy",
-        "k8s_url": "Url for deploy",
-        "k8s_registry": "Url for registry image",
-        "use_git": "Which git do you want to use?"
-   }
+  "application": "Application name",
+  "project_slug": "project_name",
+  "folder_name": "{{ cookiecutter.project_slug.replace('_', '-') }}",
+  "component_description": "Component description",
+  "project_author_name": "autor 1",
+  "email": "{something@email}",
+  "version": "0.1.0",
+  "_scaffold_version": "0.0.1",
+  "python_version": "3.14",
+  "use_k8s": [
+    "yes",
+    "no"
+  ],
+  "k8s_namespace": "default",
+  "k8s_url": "example.com",
+  "k8s_hostname": "server",
+  "k8s_registry": "url_registry",
+  "use_git": [
+    "github",
+    "gitlab"
+  ],
+  "__prompts__": {
+    "application": "Type the name of the application",
+    "project_slug": "Type the component name for the project must be alphanumeric with an underscore as a separator, max size 50, following this pattern: ^['a-zA-Z0-9']+(?:[_]['a-zA-Z0-9']+)?$ .",
+    "component_description": "Type a description for the project",
+    "project_author_name": "User or team name",
+    "email": "Type the author's email address",
+    "version": "Type the version of the project",
+    "use_k8s": "Do you want to deploy in k8s?",
+    "k8s_namespace": "Namespace for deploy",
+    "k8s_url": "Url for deploy",
+    "k8s_registry": "Url for registry image",
+    "use_git": "Which git do you want to use?"
+  }
 }
