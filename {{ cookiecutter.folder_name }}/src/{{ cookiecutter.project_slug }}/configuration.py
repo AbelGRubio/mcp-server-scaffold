@@ -27,7 +27,6 @@ class Settings(BaseSettings):
     api_ip: str = Field(default="localhost", validation_alias="API_IP") 
     api_port: int = Field(default=5005, validation_alias="API_PORT")
     debug: bool = False
-    version: str = "0.1.0"
 
     cors_origins: List[str] = Field(default_factory=list)
     # Ejemplo de secreto (si lo necesitas en el futuro)
