@@ -3,6 +3,24 @@ Python: {{cookiecutter.python_version}}
 
 # {{cookiecutter.application}} Quickstart Guide
 
+## Project Information
+
+![PyPI Package](https://img.shields.io/badge/Package%20Version-{{ cookiecutter.version }}-green?style=for-the-badge)
+![Supported Python Versions](https://img.shields.io/badge/Supported%20Python%20Versions-{{ cookiecutter.python_version }}%2B-blue?style=for-the-badge)
+
+---
+
+## Tools and Frameworks
+
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B)
+![uv](https://img.shields.io/badge/uv-4baaaa?style=for-the-badge&logo=github)
+![Ruff](https://img.shields.io/badge/Ruff-000000?style=for-the-badge&logo=ruff&logoColor=white)
+![Pyright](https://img.shields.io/badge/Pyright-61DAFB?style=for-the-badge&logo=pyright&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-0A9DFF?style=for-the-badge&logo=pytest&logoColor=white)
+![Pre-commit](https://img.shields.io/badge/Pre--commit-FDA50F?style=for-the-badge&logo=pre-commit&logoColor=white)
+
+
 ## Description
 
 This project template is designed for Python development using `uv` as the main environment and build manager. It includes:
