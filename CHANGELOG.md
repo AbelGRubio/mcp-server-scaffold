@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.4 (2025-12-21)
+
+### Bug Fixes
+
+- Update readme
+  ([`cad6054`](https://github.com/AbelGRubio/mcp-server-scaffold/commit/cad60543084fd48114b858dc95fac9e9213a96ab))
+
+
 ## v1.0.3 (2025-12-21)
 
 ### Bug Fixes
