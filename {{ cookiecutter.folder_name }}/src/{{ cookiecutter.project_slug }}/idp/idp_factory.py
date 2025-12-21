@@ -5,12 +5,12 @@ from {{ cookiecutter.project_slug }}.idp.idp_adapter import IDPAdapter
 from {{ cookiecutter.project_slug }}.idp.idp_cognito import CognitoAdapter
 from {{ cookiecutter.project_slug }}.idp.keycloak_adapter import KeycloakAdapter
 from {{ cookiecutter.project_slug }}.idp.logto_adapter import LogtoAdapter
-
+from {{ cookiecutter.project_slug }}.configuration import SETTINGS
 
 class IDPFactory:
     @staticmethod
     def get_idp() -> IDPAdapter:
-        provider = os.getenv("IDP_PROVIDER", "logto").lower()
+        provider = SETTINGS.idp_provider.lower()
         print(f"\n\nUsing IDP provider: {provider}\n\n")
 
         idps_ = {
@@ -26,7 +26,7 @@ class IDPFactory:
             raise ValueError(f"Unknown IDP provider: {provider}")
 
         return idp_adapter(
-            jwks_url=os.getenv("IDP_URL", "http://localhost:3001/oidc/jwks"),
-            audience=os.getenv("IDP_AUDIENCE", "mcp-client"),
-            issuer=os.getenv("IDP_ISSUER", "http://localhost:3001/oidc"),
+            jwks_url=SETTINGS.idp_url,
+            audience=SETTINGS.idp_audience,
+            issuer=SETTINGS.idp_issuer,
         )
