@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.3 (2025-12-21)
+
+### Bug Fixes
+
+- Change information in readme scaffold
+  ([`4e1cc42`](https://github.com/AbelGRubio/mcp-server-scaffold/commit/4e1cc42e52f0f61080f60bf5547c20a0c703d53e))
+
+
 ## v1.0.2 (2025-12-21)
 
 
