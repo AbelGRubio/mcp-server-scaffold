@@ -2,6 +2,15 @@
 
 A scaffold project for building **MCP (Model Context Protocol) servers** with a clean, extensible, and production-ready structure.
 
+
+## 👥 Who is this for?
+
+- Python developers who want to start new packages without boilerplate
+- Teams that want consistent structure and best practices across projects
+- Open-source maintainers creating reusable libraries
+- Engineers who want CI, testing, and linting ready from day one
+
+
 ## ✨ Features
 
 - Opinionated and clean project structure
