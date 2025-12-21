@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.5 (2025-12-21)
+
+### Bug Fixes
+
+- Update reading configuration using pydantic
+  ([`52dface`](https://github.com/AbelGRubio/mcp-server-scaffold/commit/52dfacecd210f8b6da85a56025b7b0be1de16a3b))
+
+
 ## v1.0.4 (2025-12-21)
 
 ### Bug Fixes
