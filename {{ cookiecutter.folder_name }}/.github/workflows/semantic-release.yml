@@ -62,6 +62,7 @@ jobs:
       # 6️⃣ Semantic release
       - name: Semantic release
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run semantic-release publish
 {% endraw %}
