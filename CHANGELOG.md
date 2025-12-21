@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.6 (2025-12-21)
+
+### Bug Fixes
+
+- Update configuration
+  ([`5626c3e`](https://github.com/AbelGRubio/mcp-server-scaffold/commit/5626c3ef661898fc2730028f9307618fc8056cda))
+
+
 ## v1.0.5 (2025-12-21)
 
 ### Bug Fixes

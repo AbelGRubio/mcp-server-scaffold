@@ -1,6 +1,6 @@
 [project]
 name = "mcp-server-scaffold"
-version = "1.0.5"
+version = "1.0.6"
 description = "A secure MCP (Model Context Protocol) authentication server with JWT validation against OpenID Connect providers such as Keycloak, Authentik, Logto, and Cognito."
 readme = "README.md"
 license = { text = "MIT" }
